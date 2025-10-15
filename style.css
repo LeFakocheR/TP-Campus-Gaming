@@ -18,6 +18,16 @@
   --color3: #151515;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
 body {
   margin: 0;
   font-family: "Montserrat", sans-serif;
@@ -130,7 +140,7 @@ header img {
 }
 
 header button {
-  padding: 15px;
+  padding: 1rem;
 }
 
 .subheader {
@@ -142,13 +152,47 @@ header button {
 .subheader p {
   text-align: center;
   line-height: 1.8;
+  font-size: 0.9rem;
 }
 
 .menu {
   background: var(--color3);
   color: #ffffff;
+  padding: 3rem;
 }
 
 .menu .container {
   display: flex;
+  justify-content: space-between;
+}
+
+.menu-sub {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1rem;
+}
+
+.menu-sub-logo {
+  padding: 10px;
+}
+
+.menu-sub h3 {
+  text-transform: uppercase;
+}
+
+.menu-sub p {
+  text-align: center;
+  font-weight: 400;
+  font-size: 0.8rem;
+}
+
+.menu button {
+  padding: 0.8rem;
+}
+
+.news {
+  background-color: var(--color2);
 }
