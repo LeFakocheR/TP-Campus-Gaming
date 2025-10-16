@@ -252,7 +252,7 @@ header button {
   padding: 2rem 0;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: clamp(1rem, 3vh, 2rem);
+  gap: 10%;
 }
 
 .news-bottom p {
@@ -265,6 +265,11 @@ header button {
   grid-template-rows: auto auto 1fr auto;
   gap: 1rem;
   line-height: 1.5;
+}
+
+.news-bottom-sub img {
+  width: 100%;
+  height: auto;
 }
 
 .news a {
