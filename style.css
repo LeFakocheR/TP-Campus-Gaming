@@ -28,6 +28,17 @@ p {
   margin: 0;
 }
 
+a {
+  text-decoration: none;
+  color: #921eff;
+}
+
+a:hover,
+a:focus {
+  text-decoration: underline;
+  color: #6316ac;
+}
+
 body {
   margin: 0;
   font-family: "Montserrat", sans-serif;
@@ -68,10 +79,10 @@ button:hover {
 nav {
   margin: 0 auto;
   background: var(--color1);
-  padding: 10px;
+  padding: 0.8rem 0;
 
   font-weight: 1000;
-  font-size: 0.8rem;
+  font-size: 1rem;
   position: sticky;
   top: 0;
 }
@@ -84,7 +95,7 @@ nav ul {
 }
 
 nav li {
-  padding: 10px 10px;
+  padding: 0.6rem 0;
   cursor: pointer;
   position: relative;
 }
@@ -92,11 +103,11 @@ nav li {
 nav li:not(:last-child)::before {
   content: "";
   position: absolute;
-  top: 0;
+  top: -0.8rem;
   left: 0;
-  background-color: #bf1eff8e;
+  background-color: #921eff;
   width: 100%;
-  height: 3px;
+  height: 0.4rem;
   transform: scaleX(0); /* start hidden */
   transform-origin: center;
   transition: transform 0.3s ease;
@@ -107,6 +118,7 @@ nav li:hover::before {
 }
 
 #language {
+  padding: 0.5rem 0.6rem;
   background: rgb(197, 197, 197);
   border-radius: 100vh;
 }
@@ -116,7 +128,7 @@ header {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  padding: 40px;
+  padding: 3rem;
   text-transform: uppercase;
   font-weight: 1000;
   color: #ffffff;
@@ -127,11 +139,11 @@ header .container {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  gap: 20px;
+  gap: 1.5rem;
 }
 
 h1 {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
 }
 
 header img {
@@ -144,15 +156,15 @@ header button {
 }
 
 .subheader {
-  padding: 20px;
+  padding: 1.3rem 0;
   font-weight: 600;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
 }
 
 .subheader p {
   text-align: center;
   line-height: 1.8;
-  font-size: 0.9rem;
+  font-size: 1.1rem;
 }
 
 .menu {
@@ -164,10 +176,10 @@ header button {
 .menu .container {
   display: flex;
   justify-content: space-between;
+  gap: clamp(1rem, 3vh, 2rem);
 }
 
 .menu-sub {
-  width: 30%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -176,7 +188,7 @@ header button {
 }
 
 .menu-sub-logo {
-  padding: 10px;
+  padding: 1rem;
 }
 
 .menu-sub h3 {
@@ -186,7 +198,7 @@ header button {
 .menu-sub p {
   text-align: center;
   font-weight: 400;
-  font-size: 0.8rem;
+  font-size: 1rem;
 }
 
 .menu button {
@@ -195,4 +207,68 @@ header button {
 
 .news {
   background-color: var(--color2);
+  padding: 3rem 0;
+  font-weight: 700;
+}
+
+.news-top {
+  padding: 2rem 0;
+  display: grid;
+  grid-template-columns: 75% 25%;
+}
+
+.news-top h2 {
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 0.3rem;
+}
+
+.news-top button {
+  background: whitesmoke;
+  color: black;
+  border: 1px solid black;
+  padding: 1rem;
+}
+
+.news-top-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 1rem;
+}
+
+.news-top-right {
+  display: flex;
+  align-items: center;
+}
+
+.news button:hover {
+  background: black;
+  color: whitesmoke;
+  border: 1px solid whitesmoke;
+}
+
+.news-bottom {
+  padding: 2rem 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: clamp(1rem, 3vh, 2rem);
+}
+
+.news-bottom p {
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+.news-bottom-sub {
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  gap: 1rem;
+  line-height: 1.5;
+}
+
+.news a {
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.1rem;
 }
