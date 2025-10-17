@@ -79,31 +79,36 @@ button:hover {
 nav {
   margin: 0 auto;
   background: var(--color1);
-  padding: 0.8rem 0;
+  padding: 0.6rem 0;
 
   font-weight: 1000;
-  font-size: 1rem;
+  font-size: 0.9rem;
   position: sticky;
   top: 0;
 }
 
 nav ul {
-  width: 100%;
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: max(0.5rem, 2%);
+  justify-content: center;
+  text-transform: uppercase;
+  align-items: center;
+  text-align: center;
   text-transform: uppercase;
 }
 
 nav li {
-  padding: 0.6rem 0;
   cursor: pointer;
   position: relative;
+  white-space: nowrap;
+  padding: 0.4rem 0;
 }
 
 nav li:not(:last-child)::before {
   content: "";
   position: absolute;
-  top: -0.8rem;
+  top: -0.7rem;
   left: 0;
   background-color: #921eff;
   width: 100%;
@@ -118,7 +123,7 @@ nav li:hover::before {
 }
 
 #language {
-  padding: 0.5rem 0.6rem;
+  padding: 0.4rem 0.5rem;
   background: rgb(197, 197, 197);
   border-radius: 100vh;
 }
@@ -128,7 +133,7 @@ header {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  padding: 3rem;
+  padding: 3rem 0;
   text-transform: uppercase;
   font-weight: 1000;
   color: #ffffff;
@@ -144,10 +149,12 @@ header .container {
 
 h1 {
   font-size: 1.8rem;
+  text-align: center;
 }
 
 header img {
-  width: 70%;
+  width: 100%;
+  max-width: 650px;
   height: auto;
 }
 
@@ -174,25 +181,33 @@ header button {
 }
 
 .menu .container {
-  display: flex;
-  justify-content: space-between;
-  gap: clamp(1rem, 3vh, 2rem);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-rows: auto auto auto auto;
+  align-items: start;
+  column-gap: max(2rem, 10%);
+  row-gap: 1rem;
 }
 
 .menu-sub {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  gap: 1rem;
+  display: grid;
+  grid-template-rows: subgrid;
+  grid-row: span 4;
+  justify-items: center;
 }
 
 .menu-sub-logo {
   padding: 1rem;
 }
 
+.menu-sub-logo img {
+  width: 100%;
+  height: auto;
+}
+
 .menu-sub h3 {
   text-transform: uppercase;
+  text-align: center;
 }
 
 .menu-sub p {
@@ -276,4 +291,90 @@ header button {
   text-transform: uppercase;
   font-size: 0.8rem;
   letter-spacing: 0.1rem;
+}
+
+.infos-top {
+  margin: 3rem 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 10%;
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+
+.infos-top p {
+  line-height: 1.5;
+}
+.infos-top-sub {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.infos-top-sub img {
+  width: 70%;
+}
+
+.infos-top-sub h4 {
+  text-transform: uppercase;
+  font-size: 1rem;
+}
+
+.infos-top-sub ul {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.reseaux {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 1rem;
+}
+
+.reseaux a:hover,
+a:focus {
+  text-decoration: none;
+  color: #6316ac;
+}
+
+.infos-bottom {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  font-weight: 700;
+  margin: 3rem 0;
+}
+
+.infos-bottom h5 {
+  text-transform: uppercase;
+}
+
+.infos-bottom p {
+  font-size: 0.8rem;
+}
+
+.infos-bottom-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.infos-bottom-right {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr));
+  gap: 1rem; /* 👈 adds space between each logo */
+}
+
+.infos-bottom-right img {
+  max-width: 100%;
+  height: auto;
+  /* object-fit: contain; */
+  /* display: block; */
+}
+
+footer {
+  background: var(--color3);
 }
