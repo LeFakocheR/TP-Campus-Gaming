@@ -88,6 +88,7 @@ nav {
   font-size: 0.9rem;
   position: sticky;
   top: 0;
+  border-bottom: #6316ac 2px solid;
 }
 
 nav ul {
@@ -298,9 +299,9 @@ header button {
 
 .infos-top {
   margin: 3rem 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-  gap: 7%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
   font-weight: 700;
   font-size: 0.9rem;
 }
@@ -309,6 +310,7 @@ header button {
   line-height: 1.5;
 }
 .infos-top-sub {
+  max-width: 11rem;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -343,11 +345,13 @@ a:focus {
 }
 
 .infos-bottom {
-  display: grid;
-  grid-template-columns: auto 1fr auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
   align-items: center;
   font-weight: 700;
-  margin: 3rem 0;
+  margin: 1.5rem 0;
+  position: relative;
 }
 
 .infos-bottom h5 {
@@ -363,14 +367,18 @@ a:focus {
   flex-direction: column;
   gap: 0.8rem;
   flex: 0 0 auto;
+  margin: 1rem 0;
 }
 
 .infos-bottom-right {
+  flex: 1 1 270px;
+  min-width: 270px;
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
   align-items: center;
   justify-content: center;
+  margin: 1rem 0;
 }
 
 .infos-bottom-right img {
@@ -379,6 +387,17 @@ a:focus {
   min-width: 40px;
   /* object-fit: contain; */
   /* display: block; */
+}
+
+.infos-bottom::before {
+  content: "";
+  position: absolute;
+  top: -1.5rem; /* align at the very top of the infos-bottom section */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--color2);
+  width: 80%;
+  height: 0.15rem;
 }
 
 footer {
