@@ -474,7 +474,7 @@ footer img {
 
 @media (max-width: 600px) {
   html {
-    font-size: 12px; /* now 1rem = 14px */
+    font-size: 14px; /* now 1rem = 14px */
   }
 
   .news-top-left {
@@ -488,7 +488,7 @@ footer img {
 
   .infos-top,
   .infos-bottom {
-    text-align: center;
+    justify-content: space-evenly;
   }
   .infos-bottom {
     justify-content: space-evenly;
