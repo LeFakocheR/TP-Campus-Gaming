@@ -1,3 +1,7 @@
+html {
+  font-size: 16px; /* explicitly set your baseline */
+}
+
 @font-face {
   font-family: "Montserrat";
   src: url(./assets/fonts/Montserrat-Medium.woff2);
@@ -72,6 +76,7 @@ button {
   color: #ffffff;
   letter-spacing: 0.1rem;
   transition: 0.4s ease;
+  font-size: 1rem;
 }
 
 button:hover {
@@ -237,14 +242,13 @@ header button {
 }
 
 .news-top-left {
-  width: 75%;
-  padding-right: 1rem;
+  width: 76%;
   padding-bottom: 1.5rem;
 }
 
 .news-top-right {
-  width: 25%;
-  min-width: 11rem;
+  width: 24%;
+  min-width: 13rem;
   padding-bottom: 1.5rem;
 }
 
@@ -280,12 +284,13 @@ header button {
 }
 
 .news-bottom {
-  padding: 2rem 0;
+  padding: 1rem 0;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 14%;
+
   grid-template-rows: auto auto auto auto;
-  justify-content: center;
-  column-gap: max(2rem, 12.5%);
+
   row-gap: 1rem;
 }
 
@@ -295,19 +300,27 @@ header button {
 }
 
 .news-bottom-sub {
+  justify-self: center;
+  margin: 0;
+  width: 100%;
+  max-width: 288px;
+  padding: 1rem 0;
   display: grid;
   grid-template-rows: subgrid;
   grid-row: span 4;
 }
 
-.news-bottom-sub-img {
+/* .news-bottom-sub:nth-of-type(1) {
+  justify-self: start;
+} /* stick to left edge   */
+
+*/ .news-bottom-sub-img {
   display: flex;
   justify-content: center;
 }
 
 .news-bottom-sub img {
   width: 100%;
-  max-width: 300px;
   height: auto;
 }
 
@@ -335,6 +348,7 @@ header button {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  justify-self: center;
 }
 
 .infos-top-sub img {
@@ -423,4 +437,61 @@ a:focus {
 
 footer {
   background: var(--color3);
+  color: #ffffff;
+  text-transform: uppercase;
+  font-weight: 100;
+  text-align: center;
+  padding: 0.5rem 0;
+}
+
+footer h3 {
+  padding: 0.5rem 0;
+  font-weight: 500;
+}
+
+footer ul {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 0.5rem 0;
+}
+
+footer li {
+  width: 6%;
+}
+
+footer img {
+  width: 100%;
+  height: auto;
+  min-width: 30px;
+  max-height: 30px;
+  object-fit: contain;
+}
+
+/* ********************************************** MEDIA QUARIES ********************************************** */
+
+@media (max-width: 600px) {
+  html {
+    font-size: 12px; /* now 1rem = 14px */
+  }
+
+  .news-top-left {
+    text-align: center;
+  }
+
+  .news-top-right {
+    display: flex;
+    justify-content: center;
+  }
+
+  .infos-top,
+  .infos-bottom {
+    text-align: center;
+  }
+  .infos-bottom {
+    justify-content: space-evenly;
+    text-align: center;
+  }
 }
